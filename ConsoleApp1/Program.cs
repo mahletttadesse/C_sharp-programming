@@ -1,10 +1,25 @@
 ﻿
-//Console.WriteLine("Hello, World!");
+// Variables
 
-Console.WriteLine('b'); // Printing char in C#
-Console.WriteLine(123); // Printing int litrals in C#
-Console.WriteLine(0.25F); // Printing float litrals in C#
-Console.WriteLine(2.625); // Printing double litrals in C#
-Console.WriteLine(12.39816m); // Printing decimal litrals in C#
-Console.WriteLine(true); // Printing bool litrals in C#
+string firstName; // declare a str variable 
+firstName = "Bob"; // initializing the variable
+Console.WriteLine(firstName);
+firstName = "Liam";
+Console.WriteLine(firstName);
 
+var message = "Hello World!";  //  declare a str variable through the assigned value
+// var must be initialized
+
+firstName = "Bob";
+int firstNumber;
+firstNumber = 3;
+double secondNumber;
+secondNumber = 34.4;
+
+Console.Write("Hello, ");
+Console.Write(firstName);
+Console.Write("! You have ");
+Console.Write(firstNumber);
+Console.Write(" messages in your inbox. The temperature is ");
+Console.Write(secondNumber);
+Console.Write(" celsius.");
