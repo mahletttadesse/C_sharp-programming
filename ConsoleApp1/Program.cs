@@ -1,22 +1,31 @@
-﻿// Create and run simple C# console applications (Get started with C#, Part 2) 
+﻿// decision-making logic in C#
 
-Random dice = new Random(); // creating instance for the Random (stateful) module
-// Random dice = new();
-// result = Random.Next(); // this is not allowed
-int roll = dice.Next(1, 7);
-Console.WriteLine(roll);
-int roll1 = dice.Next();
-int roll2 = dice.Next(101);
-int roll3 = dice.Next(50, 101);
+Random random = new Random();
+int daysUntilExpiration = random.Next(12);
+int discountPercentage = 0;
 
-Console.WriteLine($"First roll: {roll1}");
-Console.WriteLine($"Second roll: {roll2}");
-Console.WriteLine($"Third roll: {roll3}");
+// Your code goes here
 
+if (daysUntilExpiration == 0)
+{
+    Console.WriteLine("Your subscription has expired.");
+}
 
-int firstValue = 500;
-int secondValue = 600;
-int largerValue;
+else if (daysUntilExpiration == 1)
+{
+    Console.WriteLine("Your subscription expires within a day!");
+    discountPercentage = 20;
+    Console.WriteLine($"Renew now and save {discountPercentage}%!");
+}
 
-largerValue = Math.Max(firstValue, secondValue);
-Console.WriteLine(largerValue);
+else if (daysUntilExpiration <= 5)
+{
+    discountPercentage = 10;
+    Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days. \nRenew now and save {discountPercentage}%!");
+}
+
+else if (daysUntilExpiration <= 10)
+{
+    Console.WriteLine("Your subscription will expire soon. Renew now!");
+}
+
