@@ -1,47 +1,22 @@
-﻿// Guided project - Calculate final GPA
+﻿// Create and run simple C# console applications (Get started with C#, Part 2) 
 
-string studentName = "Sophia Johnson";
-string course1Name = "English 101";
-string course2Name = "Algebra 101";
-string course3Name = "Biology 101";
-string course4Name = "Computer Science I";
-string course5Name = "Psychology 101";
+Random dice = new Random(); // creating instance for the Random (stateful) module
+// Random dice = new();
+// result = Random.Next(); // this is not allowed
+int roll = dice.Next(1, 7);
+Console.WriteLine(roll);
+int roll1 = dice.Next();
+int roll2 = dice.Next(101);
+int roll3 = dice.Next(50, 101);
 
-int course1Credit = 3;
-int course2Credit = 3;
-int course3Credit = 4;
-int course4Credit = 4;
-int course5Credit = 3;
+Console.WriteLine($"First roll: {roll1}");
+Console.WriteLine($"Second roll: {roll2}");
+Console.WriteLine($"Third roll: {roll3}");
 
-int gradeA = 4;
-int gradeB = 3;
 
-int course1Grade = gradeA;
-int course2Grade = gradeB;
-int course3Grade = gradeB;
-int course4Grade = gradeB;
-int course5Grade = gradeA;
+int firstValue = 500;
+int secondValue = 600;
+int largerValue;
 
-int totalCreditHour = course1Credit + course2Credit + course3Credit + course4Credit + course5Credit;
-int totalGradePoints = course1Credit * course1Grade;
-totalGradePoints += course2Credit * course2Grade;
-totalGradePoints += course3Credit * course3Grade;
-totalGradePoints += course4Credit * course4Grade;
-totalGradePoints += course5Credit * course5Grade;
-decimal GPA = (decimal)totalGradePoints / totalCreditHour;
-int leadingDigit = totalGradePoints / totalCreditHour;
-int firstDigit = (int)(GPA * 10) % 10;
-int secondDigit = (int)(GPA * 100) % 10;
-string finalGPA = $"{leadingDigit}.{firstDigit}{secondDigit}";
-
-Console.WriteLine($@"Student:  {studentName}
-
-Course              Grade    Credit Hours
-{course1Name}           {course1Grade}      {course1Credit}
-{course2Name}           {course2Grade}      {course2Credit}
-{course3Name}           {course3Grade}      {course3Credit}
-{course4Name}    {course4Grade}      {course4Credit}
-{course5Name}        {course5Grade}      {course5Credit}
-
-Final GPA:            {finalGPA}");
-
+largerValue = Math.Max(firstValue, secondValue);
+Console.WriteLine(largerValue);
