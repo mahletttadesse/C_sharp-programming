@@ -1,47 +1,47 @@
-﻿// Guided project - Calculate final GPA
+﻿// Create readable code with conventions, whitespace, and comments in C#
 
-string studentName = "Sophia Johnson";
-string course1Name = "English 101";
-string course2Name = "Algebra 101";
-string course3Name = "Biology 101";
-string course4Name = "Computer Science I";
-string course5Name = "Psychology 101";
+/*
+  The following code creates five random OrderIDs
+  to test the fraud detection process.  OrderIDs 
+  consist of a letter from A to E, and a three
+  digit number. Ex. A123.
+*/
+Random random = new Random();
+string[] orderIDs = new string[5];
 
-int course1Credit = 3;
-int course2Credit = 3;
-int course3Credit = 4;
-int course4Credit = 4;
-int course5Credit = 3;
+for (int i = 0; i < orderIDs.Length; i++)
+{
+    int prefixValue = random.Next(65, 70);
+    string prefix = Convert.ToChar(prefixValue).ToString();
+    string suffix = random.Next(1, 1000).ToString("000");
 
-int gradeA = 4;
-int gradeB = 3;
+    orderIDs[i] = prefix + suffix;
+}
 
-int course1Grade = gradeA;
-int course2Grade = gradeB;
-int course3Grade = gradeB;
-int course4Grade = gradeB;
-int course5Grade = gradeA;
+foreach (var orderID in orderIDs)
+{
+    Console.WriteLine(orderID);
+}
 
-int totalCreditHour = course1Credit + course2Credit + course3Credit + course4Credit + course5Credit;
-int totalGradePoints = course1Credit * course1Grade;
-totalGradePoints += course2Credit * course2Grade;
-totalGradePoints += course3Credit * course3Grade;
-totalGradePoints += course4Credit * course4Grade;
-totalGradePoints += course5Credit * course5Grade;
-decimal GPA = (decimal)totalGradePoints / totalCreditHour;
-int leadingDigit = totalGradePoints / totalCreditHour;
-int firstDigit = (int)(GPA * 10) % 10;
-int secondDigit = (int)(GPA * 100) % 10;
-string finalGPA = $"{leadingDigit}.{firstDigit}{secondDigit}";
+/* This code reverses the string given and diplays the revesed
+statement as well as the count of a specific charcter in there*/
 
-Console.WriteLine($@"Student:  {studentName}
+string originalMessage = "The quick brown fox jumps over the lazy dog.";
 
-Course              Grade    Credit Hours
-{course1Name}           {course1Grade}      {course1Credit}
-{course2Name}           {course2Grade}      {course2Credit}
-{course3Name}           {course3Grade}      {course3Credit}
-{course4Name}    {course4Grade}      {course4Credit}
-{course5Name}        {course5Grade}      {course5Credit}
+char[] message = originalMessage.ToCharArray();
+Array.Reverse(message);
 
-Final GPA:            {finalGPA}");
+int lettercount = 0;
 
+foreach (char letter in message)
+{
+    if (letter == 'o')
+    {
+        lettercount++;
+    }
+}
+
+string new_message = new String(message);
+
+Console.WriteLine(new_message);
+Console.WriteLine($" 'o' appears {lettercount} times.");
